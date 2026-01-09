@@ -64,8 +64,10 @@ const Hero = () => {
       0
     );
 
-    const startValue = isMobile ? "top 50%" : "center 60%";
+    const startValue = isMobile ? "top 40%" : "center 60%";
     const endValue = isMobile ? "120% top" : "bottom top";
+
+    console.log({ isMobile });
 
     const videoTimeline = gsap.timeline({
       scrollTrigger: {
@@ -130,12 +132,12 @@ const Hero = () => {
         </div>
       </section>
 
-      <div className="video bg-red-500">
+      <div className="video ">
         <video
           src="/videos/output2.mp4"
           playsInline
           muted
-          className="w-full absolute object-bottom h-1/2 bottom-0 left-0"
+          className="w-full absolute object-bottom h-1/2 bottom-0 left-0 "
           preload="auto"
           ref={videoRef}
         />
