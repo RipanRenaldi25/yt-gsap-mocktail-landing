@@ -1,10 +1,74 @@
+import { useGSAP } from "@gsap/react";
+import { SplitText } from "gsap/SplitText";
+import gsap from "gsap";
+
 const About = () => {
+  useGSAP(() => {
+    const titleSplit = SplitText.create("#abt h2", {
+      type: "words",
+    });
+
+    const subContentSplit = SplitText.create("#abt .sub-cont", {
+      type: "lines",
+    });
+
+    const aboutTimeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#abt",
+        start: "top center",
+      },
+    });
+
+    aboutTimeline.from("#badge", {
+      yPercent: 100,
+      opacity: 0,
+      duration: 0.8,
+      ease: "power1.out",
+    });
+
+    aboutTimeline.from(
+      titleSplit.words,
+      {
+        yPercent: 100,
+        duration: 0.8,
+        stagger: 0.05,
+        ease: "power1.out",
+        opacity: 0,
+      },
+      "-=0.8"
+    );
+
+    aboutTimeline.from(
+      subContentSplit.lines,
+      {
+        opacity: 0,
+        yPercent: 100,
+        stagger: 0.05,
+        ease: "power1.out",
+      },
+      "-=0.8"
+    );
+
+    aboutTimeline.from(
+      ".t-grid div, .b-grid div",
+      {
+        opacity: 0,
+        stagger: 0.05,
+        ease: "power1.inOut",
+        duration: 1,
+      },
+      "-=0.5"
+    );
+  }, []);
   return (
-    <section id="" className="min-h-screen py-12 px-6 space-y-5">
+    <section id="abt" className="min-h-screen py-12 px-6 space-y-5">
       <div className="lg:grid lg:grid-cols-12 gap-5 ">
         <div className="cont flex flex-col md: justify-between items-start gap-5 flex-1 lg:col-span-8">
           <div className="space-y-5">
-            <p className="text-black bg-white px-4 py-2 font-medium rounded-full inline-block">
+            <p
+              id="badge"
+              className="text-black bg-white px-4 py-2 font-medium rounded-full inline-block"
+            >
               Best Cocktails
             </p>
             <h2 className="text-4xl font-modern-negra lg:max-w-xl lg:text-6xl">
@@ -13,7 +77,7 @@ const About = () => {
           </div>
         </div>
 
-        <div className="sub cont space-y-5 flex-1 lg:col-span-4 lg:flex lg:flex-col lg:justify-between lg:text-lg font-thin">
+        <div className="sub-cont space-y-5 flex-1 lg:col-span-4 lg:flex lg:flex-col lg:justify-between lg:text-lg font-thin">
           <p>
             Every cocktail we serve is a reflection of our obsession with detail{" "}
             <span>—</span> from the first muddle to the final garnish. That care
@@ -52,7 +116,7 @@ const About = () => {
           </div>
         </div>
 
-        <div className="space-y-5 grid grid-cols-1 lg:grid-cols-12 gap-5  h-72  overflow-hidden">
+        <div className="b-grid space-y-5 grid grid-cols-1 lg:grid-cols-12 gap-5  h-72  overflow-hidden">
           <div className="col-span-8 rounded-3xl bg-yellow w-full h-full">
             <img
               src={"/images/abt3.png"}
