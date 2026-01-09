@@ -16,7 +16,6 @@ const Cocktails = () => {
         start: startTrigger,
         end: endTrigger,
         scrub: true,
-        markers: true,
       },
     });
     leafTimeline.from(
