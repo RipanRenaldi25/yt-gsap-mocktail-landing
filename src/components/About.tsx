@@ -1,8 +1,12 @@
 import { useGSAP } from "@gsap/react";
 import { SplitText } from "gsap/SplitText";
 import gsap from "gsap";
+import Rating from "./Rating";
+import { useState } from "react";
 
 const About = () => {
+  const [rating] = useState<number>(4.5);
+
   useGSAP(() => {
     const titleSplit = SplitText.create("#abt h2", {
       type: "words",
@@ -77,53 +81,65 @@ const About = () => {
           </div>
         </div>
 
-        <div className="sub-cont space-y-5 flex-1 lg:col-span-4 lg:flex lg:flex-col lg:justify-between lg:text-lg font-thin">
-          <p>
-            Every cocktail we serve is a reflection of our obsession with detail{" "}
-            <span>—</span> from the first muddle to the final garnish. That care
-            is what turns a simple drink into something truly memorable.
-          </p>
-
+        <div className="sub-cont   lg:col-span-4  lg:text-lg font-thin lg:flex lg:flex-col lg:justify-between">
           <div>
-            <p className="text-yellow">
-              <span className="text-xl lg:text-3xl">4.5</span>
-              /5
+            <p>
+              Every cocktail we serve is a reflection of our obsession with
+              detail — from the first muddle to the final garnish. That care is
+              what turns a simple drink into something truly memorable.
             </p>
-            <p className="text-sm ">More than +12000 customers</p>
+          </div>
+
+          <div className="flex items-center ">
+            <div className="space-y-2 flex-1">
+              <Rating rate={rating} />
+              <p className="text-yellow">
+                <span className="text-xl lg:text-3xl">{rating}</span>
+                /5
+              </p>
+              <p className="text-sm ">More than +12000 customers</p>
+            </div>
+
+            <div className="bg-red-500 flex-1">Avatar</div>
           </div>
         </div>
       </div>
 
-      <div id="grid-container" className="space-y-5">
-        <div className="t-grid grid grid-cols-1 lg:grid-cols-12 gap-5  oveflow-hidden h-72 overflow-hidden ">
-          <div className="col-span-3 rounded-3xl bg-yellow w-full h-full">
+      <div id="grid-container" className="space-y-5 w-full ">
+        {/* Top */}
+        <div className="t-grid grid grid-cols-1  lg:grid-cols-12 gap-5 w-full ">
+          <div className="lg:col-span-3 rounded-3xl  overflow-hidden w-full h-72">
             <img
               src={"/images/abt1.png"}
-              className="object-cover h-full w-full"
+              className="object-cover w-full h-full"
             />
           </div>
-          <div className="col-span-6 rounded-3xl bg-yellow w-full h-full">
+
+          <div className="lg:col-span-6 rounded-3xl  overflow-hidden w-full h-72">
             <img
               src={"/images/abt2.png"}
-              className="object-cover h-full w-full"
+              className="object-cover w-full h-full"
             />
           </div>
-          <div className="col-span-3 rounded-3xl bg-yellow w-full h-full">
+
+          <div className="lg:col-span-3 rounded-3xl  overflow-hidden w-full h-72">
             <img
               src={"/images/abt5.png"}
-              className="object-cover h-full w-full"
+              className="object-cover w-full h-full"
             />
           </div>
         </div>
 
-        <div className="b-grid space-y-5 grid grid-cols-1 lg:grid-cols-12 gap-5  h-72  overflow-hidden">
-          <div className="col-span-8 rounded-3xl bg-yellow w-full h-full">
+        {/* Bottom */}
+
+        <div className="b-grid space-y-5 grid grid-cols-1 lg:grid-cols-12 gap-5  overflow-hidden">
+          <div className="lg:col-span-8 rounded-3xl  w-full h-72">
             <img
               src={"/images/abt3.png"}
               className="object-cover h-full w-full"
             />
           </div>
-          <div className="col-span-4 rounded-3xl bg-yellow w-full h-full">
+          <div className="lg:col-span-4 rounded-3xl  w-full h-72">
             <img
               src={"/images/abt4.png"}
               className="object-cover h-full w-full"

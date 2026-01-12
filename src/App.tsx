@@ -6,12 +6,13 @@ import Hero from "./components/Hero";
 import Cocktails from "./components/Cocktails";
 import About from "./components/About";
 import { registerSW } from "virtual:pwa-register";
+import { ScrollToPlugin } from "gsap/all";
 
 registerSW({
   immediate: true,
 });
 
-gsap.registerPlugin(ScrollTrigger, SplitText);
+gsap.registerPlugin(ScrollTrigger, SplitText, ScrollToPlugin);
 
 const App = () => {
   return (

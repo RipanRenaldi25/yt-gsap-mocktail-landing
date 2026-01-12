@@ -114,17 +114,34 @@ const Hero = () => {
           <div className="content">
             <div className="space-y-5 hidden md:block">
               <p className="subtitle">Cool, Crisp, Classic</p>
-              <p className="subtitle">
-                Sip the spirit <br /> of summer
+              <p className="font-modern-negra text-6xl text-yellow">
+                Sip the spirit
+              </p>
+              <p className="font-modern-negra text-6xl text-yellow">
+                of summer
               </p>
             </div>
 
             <div className="view-cocktails">
-              <p className="subtitle">
+              <p className="subtitle font-thin text-md">
                 Every cocktail on our menu is a blend of premium ingredients,
                 creative flair, and timeless recipes — designed to delight your
                 senses.
               </p>
+              <h5
+                className="subtitle text-start font-thin hover:cursor-pointer"
+                id="view-cocktails"
+                onClick={() => {
+                  const viewCocktailsTL = gsap.timeline();
+                  viewCocktailsTL.to(window, {
+                    scrollTo: "#cocktails",
+                    duration: 0.1,
+                    ease: "none",
+                  });
+                }}
+              >
+                View cocktails
+              </h5>
             </div>
           </div>
         </div>
