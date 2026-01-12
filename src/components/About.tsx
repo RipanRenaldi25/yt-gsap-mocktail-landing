@@ -3,7 +3,6 @@ import { SplitText } from "gsap/SplitText";
 import gsap from "gsap";
 import Rating from "./Rating";
 import { useState } from "react";
-import Avatar from "./Avatar";
 import AvatarList from "./AvatarList";
 import { profileLists } from "../constants";
 
@@ -84,7 +83,7 @@ const About = () => {
           </div>
         </div>
 
-        <div className="sub-cont   lg:col-span-4  lg:text-lg font-thin lg:flex lg:flex-col lg:justify-between">
+        <div className="sub-cont   lg:col-span-4  lg:text-lg font-thin lg:flex lg:flex-col lg:justify-between lg:gap-10">
           <div>
             <p>
               Every cocktail we serve is a reflection of our obsession with
@@ -93,8 +92,8 @@ const About = () => {
             </p>
           </div>
 
-          <div className="flex items-center">
-            <div className="space-y-2 flex-1">
+          <div className="flex items-center justify-between">
+            <div className="space-y-2 ">
               <Rating rate={rating} />
               <p className="text-yellow">
                 <span className="text-xl lg:text-3xl">{rating}</span>
@@ -103,8 +102,10 @@ const About = () => {
               <p className="text-sm ">More than +12000 customers</p>
             </div>
 
-            <div className="flex-1">
-              <AvatarList avatars={profileLists} />
+            <div className="flex items-center justify-center ">
+              <div className="pl-9 py-5 bg-linear-to-b from-[rgba(49,49,49,1)] to-[rgba(15,15,15,1)] rounded-full">
+                <AvatarList avatars={profileLists} />
+              </div>
             </div>
           </div>
         </div>
