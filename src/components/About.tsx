@@ -3,6 +3,9 @@ import { SplitText } from "gsap/SplitText";
 import gsap from "gsap";
 import Rating from "./Rating";
 import { useState } from "react";
+import Avatar from "./Avatar";
+import AvatarList from "./AvatarList";
+import { profileLists } from "../constants";
 
 const About = () => {
   const [rating] = useState<number>(4.5);
@@ -90,7 +93,7 @@ const About = () => {
             </p>
           </div>
 
-          <div className="flex items-center ">
+          <div className="flex items-center">
             <div className="space-y-2 flex-1">
               <Rating rate={rating} />
               <p className="text-yellow">
@@ -100,7 +103,9 @@ const About = () => {
               <p className="text-sm ">More than +12000 customers</p>
             </div>
 
-            <div className="bg-red-500 flex-1">Avatar</div>
+            <div className="flex-1">
+              <AvatarList avatars={profileLists} />
+            </div>
           </div>
         </div>
       </div>
