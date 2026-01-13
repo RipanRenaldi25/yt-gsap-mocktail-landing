@@ -1,4 +1,3 @@
-import React from "react";
 import { FaStar, FaRegStar, FaStarHalfAlt as FaStarHalf } from "react-icons/fa";
 
 interface IStar {

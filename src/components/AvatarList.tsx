@@ -1,4 +1,3 @@
-import React from "react";
 import Avatar, { type IAvatar } from "./Avatar";
 import { countAvatars } from "../utils";
 
