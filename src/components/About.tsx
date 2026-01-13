@@ -83,7 +83,7 @@ const About = () => {
           </div>
         </div>
 
-        <div className="sub-cont   lg:col-span-4  lg:text-lg font-thin lg:flex lg:flex-col lg:justify-between lg:gap-10">
+        <div className="sub-cont   lg:col-span-4  lg:text-lg font-thin lg:flex lg:flex-col lg:justify-between lg:gap-10 ">
           <div>
             <p>
               Every cocktail we serve is a reflection of our obsession with
@@ -92,7 +92,7 @@ const About = () => {
             </p>
           </div>
 
-          <div className="flex items-center justify-between">
+          <div className="flex lg:items-center justify-between flex-col lg:flex-row">
             <div className="space-y-2 ">
               <Rating rate={rating} />
               <p className="text-yellow">
@@ -102,7 +102,7 @@ const About = () => {
               <p className="text-sm ">More than +12000 customers</p>
             </div>
 
-            <div className="flex items-center justify-center ">
+            <div className="lg:flex lg:items-center lg:justify-center hidden">
               <div className="pl-9 py-5 bg-linear-to-b from-[rgba(49,49,49,1)] to-[rgba(15,15,15,1)] rounded-full">
                 <AvatarList avatars={profileLists} />
               </div>
